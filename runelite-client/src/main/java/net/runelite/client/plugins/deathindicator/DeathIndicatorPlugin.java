@@ -204,7 +204,7 @@ public class DeathIndicatorPlugin extends Plugin
 
 		// Check if the player is at their death location, or timer has passed
 		WorldPoint deathPoint = new WorldPoint(config.deathLocationX(), config.deathLocationY(), config.deathLocationPlane());
-		if (deathPoint.equals(client.getLocalPlayer().getWorldLocation()) || (deathTimer != null && deathTimer.cull()))
+		if (deathPoint.equals(client.getLocalPlayer().getWorldLocation()) && !config.showDeathAfterLooting() || (deathTimer != null && deathTimer.cull()))
 		{
 			client.clearHintArrow();
 

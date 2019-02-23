@@ -65,6 +65,17 @@ public interface DeathIndicatorConfig extends Config
 		return true;
 	}
 
+	@ConfigItem(
+			position = 4,
+			keyName = "deathAfterLooting",
+			name = "Persist marker after looting",
+			description = "If enabled, death indicator will not clear after standing on the death tile"
+	)
+	default boolean showDeathAfterLooting()
+	{
+		return false;
+	}
+
 	// Stored Data
 	@ConfigItem(
 		keyName = "deathWorld",
